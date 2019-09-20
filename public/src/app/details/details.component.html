@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col"></div>
+    <div class="col text-center">
+        <a [routerLink]="['/pets']" class="text-center">Home</a>
+    </div>
+    <div class="col"></div>
+</div>
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <div class="text-center p-3 mt-2" style="border: solid 2px black; width: 80%; margin-left: auto; margin-right: auto; border-radius: 10px;">
+            <h5>Details about {{ petDetails.name }}</h5>
+            <label class="font-weight-bold">
+                Pet type:
+            </label>
+            <p>
+                {{ petDetails.type }}
+            </p>
+            <label class="font-weight-bold">
+                Description:
+            </label>
+            <p>
+                {{ petDetails.description }}
+            </p>
+            <label class="font-weight-bold">
+                Skills:
+            </label>
+            <p>
+                {{ petDetails.skills_one }}
+            </p>
+            <p>
+                {{ petDetails.skills_two }}
+            </p>
+            <p>
+                {{ petDetails.skills_three }}
+            </p>
+            <label class="font-weight-bold">
+                Likes:
+            </label>
+            <p>{{ petDetails.likes }}</p>
+            <button (click)="likePet(petDetails)" class="btn btn-outline-primary mx-2">Like this pet</button>
+            <button (click)="adoptPet(petDetails._id)" class="btn btn-outline-success mx-2">Adopt this pet!</button>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
+

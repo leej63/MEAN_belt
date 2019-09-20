@@ -1,0 +1,81 @@
+<h6 class="text-center">Know of a pet needing a home?</h6>
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <div class="text-center p-3" style="border: solid 2px black; width: 80%; margin-left: auto; margin-right: auto; border-radius: 10px;">
+            <form>
+                <label>
+                    Pet name:
+                    <input
+                        type="text"
+                        name="name"
+                        [(ngModel)]="newPet.name"
+                        #name="ngModel"
+                        required
+                        minlength="3"
+                    >
+                </label><br>
+                <label>
+                    Pet type:
+                    <input
+                        type="text"
+                        name="type"
+                        [(ngModel)]="newPet.type"
+                        #type="ngModel"
+                        required
+                        minlength="3"
+                    >
+                </label><br>
+                <label>
+                    Description:
+                    <input
+                        type="text"
+                        name="description"
+                        [(ngModel)]="newPet.description"
+                        #description="ngModel"
+                        required
+                        minlength="3"
+                    >
+                </label><br>
+                <label>
+                    Skills (optional):
+                </label><br>
+                    <label>
+                        Skill 1:
+                        <input
+                            type="text"
+                            name="skills_one"
+                            [(ngModel)]="newPet.skills_one"
+                            #skills_one="ngModel"
+                        >
+                    </label><br>
+                    <label>
+                        Skill 2:
+                        <input
+                            type="text"
+                            name="skills_two"
+                            [(ngModel)]="newPet.skills_two"
+                            #skills_two="ngModel"
+                        >
+                    </label><br>
+                    <label>
+                        Skill 3:
+                        <input
+                            type="text"
+                            name="skills_three"
+                            [(ngModel)]="newPet.skills_three"
+                            #skills_three="ngModel"
+                        >
+                    </label><br>
+                <button (click)="createAPet()" class="btn btn-outline-primary mx-2">Add pet</button>
+                <button [routerLink]="['/pets']" class="btn btn-outline-primary mx-2">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
+<div class="text-center m-2">
+    <span style="color: red;" *ngIf="!name.valid">Name is invalid, must be atleast 3 characters.</span><br>
+    <span style="color: red;" *ngIf="!type.valid">Type is invalid, must be atleast 3 characters.</span><br>
+    <span style="color: red;" *ngIf="!description.valid">Description is invalid, must be atleast 3 characters.</span><br>
+</div>
